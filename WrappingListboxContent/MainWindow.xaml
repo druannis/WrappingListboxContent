@@ -1,0 +1,27 @@
+﻿<Window x:Class="WrappingListboxContent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WrappingListboxContent"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ItemsPanelTemplate x:Key="ListBoxItemsPanel1">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="513*"/>
+            <ColumnDefinition Width="287*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsPanel="{DynamicResource ListBoxItemsPanel1}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="277,95,224,95" Grid.ColumnSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <Rectangle Height="100" Stroke="Black" Width="100" Fill="#FFEE1B1B"/>
+            <Rectangle Height="100" Stroke="Black" Width="100" Fill="Bisque"/>
+            <Rectangle Height="100" Stroke="Black" Width="100" Fill="AliceBlue"/>
+            <Rectangle Height="100" Stroke="Black" Width="100" Fill="Cyan"/>
+            <Rectangle Height="100" Stroke="Black" Width="100" Fill="#FFEE1B1B"/>
+        </ListBox>
+    </Grid>
+</Window>
